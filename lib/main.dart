@@ -33,13 +33,7 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(title),
       ),
-      body: Center(
-        child: UserProfileCard(
-          name: 'Jane Doe',
-          email: 'jane.doe@example.com',
-          avatarUrl: 'https://i.pravatar.cc/150?img=5',
-        ),
-      ),
+      body: Center(child: UserProfileScreen()),
     );
   }
 }
