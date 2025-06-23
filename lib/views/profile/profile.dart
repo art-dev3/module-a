@@ -15,37 +15,35 @@ class UserProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('User Profile'), centerTitle: true),
+      backgroundColor: Colors.grey[100], // light background for contrast
+      appBar: AppBar(title: const Text('Profile'), centerTitle: true),
       body: Center(
         child: Card(
-          margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+          elevation: 6,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
-          elevation: 8,
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 CircleAvatar(
-                  radius: 50,
+                  radius: 48,
+                  backgroundColor: Colors.grey[300],
                   backgroundImage: NetworkImage(avatarUrl),
+                  onBackgroundImageError: (_, __) =>
+                      const Icon(Icons.person, size: 48),
                 ),
                 const SizedBox(height: 20),
                 Text(
                   name,
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.center,
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 8),
-                Text(
-                  email,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                  textAlign: TextAlign.center,
-                ),
+                Text(email, style: Theme.of(context).textTheme.bodyMedium),
               ],
             ),
           ),
