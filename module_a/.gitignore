@@ -1,0 +1,33 @@
+# Common large files to ignore
+*.apk
+*.ipa
+*.aab
+*.tar
+*.zip
+*.7z
+*.rar
+*.bin
+*.mp4
+*.mov
+*.avi
+*.exe
+*.dll
+*.iso
+*.dmg
+
+# Firebase Crashlytics symbols and dSYMs
+**/ios/Runner.app.dSYM/
+**/build/
+
+# IDE crash reports or logs
+crashlytics-build.log
+
+# Generated screenshots or assets
+/screenshots/
+/assets/videos/
+/assets/large/
+
+# Ignore test coverage outputs
+coverage/
+
+# Optional: prevent adding files over 100MB (using pre-commit or .gitattributes with Git LFS)
